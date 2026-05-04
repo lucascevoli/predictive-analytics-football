@@ -194,6 +194,8 @@ Possible project evolutions include:
 
 ## 📌 Final Thoughts
 
-This project reflects a practical approach to predictive analytics, combining statistical fundamentals, data engineering, and business context.
+This project reflects a practical approach to predictive analytics, focusing on the study and application of machine learning models in a context present in the lives of millions of people.
 
-Rather than predicting results, the focus was on structuring a consistent, interpretable, and evolveable analytical process.
+Developed as part of building a personal portfolio, the work seeks to consolidate analytical fundamentals and explore different modeling approaches in a structured way.
+
+More than predicting results, the focus was on structuring a consistent, interpretable, and evolveable analytical process.
