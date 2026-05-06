@@ -22,10 +22,10 @@ The problem was modeled as multiple binary classification tasks:
 
 ### Goal Ranges:
 
-* `under_4_5`
-* `under_3_5`
-* `over_0_5`
-* `over_1_5`
+* `under_4.5`
+* `under_3.5`
+* `over_0.5`
+* `over_1.5`
 
 Each variable indicates, in binary form, whether or not the analyzed match falls within that goal range.
 
@@ -70,26 +70,25 @@ The central idea was to capture the teams' momentum in a standardized and compar
 
 #### Input Variables:
 
-* `pct_vit_prob`: The probability of victory for the home team, based on probabilistic concepts and shown on the official match page of the Sofascore platform.
-* `aprvt_time`: The home team's performance in the last 5 games of that championship, regardless of location (home/away).
-* `aprvt_adv`: The away team's performance in the last 5 games of that championship, regardless of location (home/away).
-* `aprvt_time_casa`: The home team's performance playing at home in the last 5 games of that championship.
-* `aprvt_adv_vis`: The away team's performance playing away in the last 5 games of that championship.
-* `aprvt_time_cft`: Home team's recent record against this opponent, regardless of location.
-* `aprvt_adv_cft`: Away team's recent record against the home team, regardless of location.
-* `avg_goals`: Average number of goals per match in recent encounters between the two teams.
-* `xg_time`: Expected Goals (xG) for the home team: the probability of the home team scoring a goal in that match, based on Sofascore's own statistics.
-* `xga_time`: Expected Goals Against (xGA) for the home team: the probability of the home team conceding a goal in that match, based on Sofascore's own statistics.
-* `xg_vis`: Expected Goals (xG) for the away team: the probability of the away team scoring a goal in that match, based on Sofascore's own statistics.
-* `xga_vis`: Expected Goals Against (xGA) of the opposing team: the probability of the away team conceding a goal in that match, based on statistics from Sofascore itself.
+* `home_win_prob`: (integer) The probability of victory for the home team, based on probabilistic concepts and shown on the official match page of the Sofascore platform.
+* `hometeam_perf`: (integer) The home team's performance in the last 5 games of that championship, regardless of location (home/away).
+* `awayteam_perf`: (integer) The away team's performance in the last 5 games of that championship, regardless of location (home/away).
+* `hometeam_perf_home`: (integer) The home team's performance playing at home in the last 5 games of that championship.
+* `awayteam_perf_away`: (integer) The away team's performance playing away in the last 5 games of that championship.
+* `hometeam_against`: (integer) Home team's recent record against this opponent, regardless of location.
+* `awayteam_against`: (integer) Away team's recent record against the home team, regardless of location.
+* `avg_goals`: (double) Average number of goals per match in recent encounters between the two teams.
+* `xga_hometeam`: (double) Expected Goals Against (xGA) for the home team: the probability of the home team conceding a goal in that match, based on Sofascore's own statistics.
+* `xg_awayteam`: (double) Expected Goals (xG) for the away team: the probability of the away team scoring a goal in that match, based on Sofascore's own statistics.
+* `xga_awayteam`: (double) Expected Goals Against (xGA) of the opposing team: the probability of the away team conceding a goal in that match, based on statistics from Sofascore itself.
 
 Output Variables:
 
-* `result`: Binary classification system representing the final score of the match, where "1" indicates a win or draw for the home team and "0" indicates a loss for the home team.
-* `menos_4.5`: Binary classification indicating whether the number of goals in the match was below the 4.5-goal range, where "1" indicates if the score remained below and "0" if it exceeded.
-* `menos_3.5`: Binary classification indicating whether the number of goals in the match was below the 3.5-goal range, where "1" indicates if the score remained below and "0" if it exceeded.
-* `mais_0.5`: Binary classification indicating whether the number of goals in the match was above the 0.5-goal range, where "1" indicates if the score exceeded and "0" if it did not.
-* `mais_1.5`: Binary classification indicating whether the number of goals in the match exceeded the 1.5-goal range, where "1" indicates if the score exceeded that range and "0" if it did not.
+* `result`: (integer) Binary classification system representing the final score of the match, where "1" indicates a win or draw for the home team and "0" indicates a loss for the home team.
+* `under_4.5`: (integer) Binary classification indicating whether the number of goals in the match was below the 4.5-goal range, where "1" indicates if the score remained below and "0" if it exceeded.
+* `under_3.5`: (integer) Binary classification indicating whether the number of goals in the match was below the 3.5-goal range, where "1" indicates if the score remained below and "0" if it exceeded.
+* `over_0.5`: (integer) Binary classification indicating whether the number of goals in the match was above the 0.5-goal range, where "1" indicates if the score exceeded and "0" if it did not.
+* `over_1.5`: (integer) Binary classification indicating whether the number of goals in the match exceeded the 1.5-goal range, where "1" indicates if the score exceeded that range and "0" if it did not.
 
 ---
 
